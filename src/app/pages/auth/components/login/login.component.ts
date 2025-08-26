@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { IonItem, IonInput, IonContent } from '@ionic/angular/standalone';
 import { IonicModule } from '@ionic/angular';
 import { NgIf } from '@angular/common';
 

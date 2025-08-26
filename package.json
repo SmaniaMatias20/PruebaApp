@@ -28,6 +28,7 @@
     "@capacitor/keyboard": "7.0.2",
     "@capacitor/status-bar": "7.0.2",
     "@ionic/angular": "^8.0.0",
+    "@supabase/supabase-js": "^2.56.0",
     "ionicons": "^7.0.0",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.6",
