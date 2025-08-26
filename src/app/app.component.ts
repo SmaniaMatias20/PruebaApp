@@ -19,7 +19,9 @@ export class AppComponent {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         // Mejor usar urlAfterRedirects para rutas con redirect o query params
+        console.log((event as NavigationEnd).urlAfterRedirects !== '/auth');
         this.showNavbarAndFooter = (event as NavigationEnd).urlAfterRedirects !== '/auth';
+        console.log(this.showNavbarAndFooter);
       });
   }
 }
