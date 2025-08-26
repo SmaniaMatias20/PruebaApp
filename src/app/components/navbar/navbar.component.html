@@ -1,0 +1,27 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Prueba App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button routerLink="/home" expand="full">Home</ion-button>
+    <ion-button routerLink="/about" expand="full">About</ion-button>
+    <ion-button routerLink="/contact" expand="full">Contact</ion-button>
+    <ion-button (click)="logOut()">Log out</ion-button>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Prueba App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    Tap the button in the toolbar to open the menu.
+  </ion-content>
+</div>
