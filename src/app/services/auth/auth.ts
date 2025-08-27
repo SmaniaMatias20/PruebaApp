@@ -149,16 +149,20 @@ export class Auth {
    * @returns {Promise<{ success: boolean; message: string }>} Resultado de la operación
    */
   async logout(): Promise<{ success: boolean; message: string }> {
-    const { error } = await this.supabase.auth.signOut();
+    try {
+      const { error } = await this.supabase.auth.signOut();
 
-    if (error) {
-      return { success: false, message: error.message };
+      if (error) {
+        return { success: false, message: error.message };
+      }
+
+      localStorage.removeItem('user');
+      this.user.set(false);
+      this.router.navigateByUrl('/auth');
+      return { success: true, message: 'Sesión cerrada correctamente.' };
+    } catch (error) {
+      return { success: false, message: 'Error al cerrar la sesión.' };
     }
-
-    localStorage.removeItem('user');
-    this.user.set(false);
-    this.router.navigateByUrl('/home');
-    return { success: true, message: 'Sesión cerrada correctamente.' };
   }
 
 }

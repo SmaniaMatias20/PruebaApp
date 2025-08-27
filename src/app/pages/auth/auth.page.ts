@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { IonicModule } from '@ionic/angular';
+import { Auth } from '../../services/auth/auth';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { IonicModule } from '@ionic/angular';
 })
 export class AuthPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: Auth) { }
 
   ngOnInit() {
   }
@@ -23,6 +24,5 @@ export class AuthPage implements OnInit {
   goToHome() {
     this.router.navigate(['home']);
   }
-
 
 }
