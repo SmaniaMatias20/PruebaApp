@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'auth',
-    loadComponent: () => import('./pages/auth/auth.component').then(m => m.AuthComponent),
+    loadComponent: () => import('./pages/auth/auth.page').then(m => m.AuthPage),
   },
   {
     path: 'home',
@@ -13,5 +13,5 @@ export const routes: Routes = [
     path: '**', // cualquier otra ruta
     redirectTo: 'auth',
     pathMatch: 'full',
-  },
+  }
 ];
