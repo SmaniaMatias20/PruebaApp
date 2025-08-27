@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { EventEmitter } from '@angular/core';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -15,6 +16,7 @@ import { NgIf } from '@angular/common';
   ],
 })
 export class LoginComponent {
+  @Output() payload = new EventEmitter();
 
   loginForm: FormGroup;
 
@@ -34,7 +36,8 @@ export class LoginComponent {
         ? { email: emailOrUser, password }
         : { username: emailOrUser, password };
 
-      console.log('Login payload:', payload);
+
+      this.payload.emit(payload);
     } else {
       this.loginForm.markAllAsTouched();
     }

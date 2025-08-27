@@ -16,9 +16,24 @@ import { Auth } from '../../services/auth/auth';
 })
 export class AuthPage implements OnInit {
 
+  emailOrUser: string = '';
+  password: string = '';
+
   constructor(private router: Router, private auth: Auth) { }
 
   ngOnInit() {
+  }
+
+  async onLogin(payload: any) {
+    try {
+      const { success, message } = await this.auth.login(payload.email, payload.password);
+      if (success) {
+        this.router.navigate(['home']);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
   }
 
   goToHome() {

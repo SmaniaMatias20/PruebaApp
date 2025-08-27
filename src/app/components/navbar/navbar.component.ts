@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { Auth } from '../../services/auth/auth';
 import { IonicModule } from '@ionic/angular';
 
@@ -11,7 +11,7 @@ import { IonicModule } from '@ionic/angular';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router, private auth: Auth) { }
+  constructor(private auth: Auth) { }
 
   ngOnInit() { }
 
