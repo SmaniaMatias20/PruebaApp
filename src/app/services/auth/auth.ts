@@ -139,7 +139,7 @@ export class Auth {
       this.user.set(userDetails);
     }
 
-    this.router.navigateByUrl('/home');
+    this.router.navigate(['/home'], { replaceUrl: true });
     return { success: true, message: 'Inicio de sesión exitoso.' };
   }
 
@@ -158,7 +158,8 @@ export class Auth {
 
       localStorage.removeItem('user');
       this.user.set(false);
-      this.router.navigateByUrl('/auth');
+      this.router.navigate(['/auth'], { replaceUrl: true });
+
       return { success: true, message: 'Sesión cerrada correctamente.' };
     } catch (error) {
       return { success: false, message: 'Error al cerrar la sesión.' };

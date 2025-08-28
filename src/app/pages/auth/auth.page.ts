@@ -36,8 +36,6 @@ export class AuthPage implements OnInit {
 
   }
 
-  goToHome() {
-    this.router.navigate(['home']);
-  }
+
 
 }

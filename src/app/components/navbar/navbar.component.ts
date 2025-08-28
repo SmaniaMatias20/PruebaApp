@@ -15,13 +15,14 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() { }
 
-  logOut() {
+  async logOut() {
     try {
-      this.auth.logout();
+      await this.auth.logout();   // 👈 importante
     } catch (error) {
       console.log(error);
     }
   }
+
 
 
 }
