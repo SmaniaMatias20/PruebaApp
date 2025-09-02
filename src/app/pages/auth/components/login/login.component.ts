@@ -2,7 +2,6 @@ import { Component, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { EventEmitter } from '@angular/core';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,6 @@ import { NgIf } from '@angular/common';
   imports: [
     IonicModule,
     ReactiveFormsModule,
-    NgIf
   ],
 })
 export class LoginComponent {
@@ -22,21 +20,15 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      emailOrUser: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(15)]]
     });
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
-      const { emailOrUser, password } = this.loginForm.value;
-
-      const isEmail = /\S+@\S+\.\S+/.test(emailOrUser);
-      const payload = isEmail
-        ? { email: emailOrUser, password }
-        : { username: emailOrUser, password };
-
-
+      const { email, password } = this.loginForm.value;
+      const payload = { email: email, password }
       this.payload.emit(payload);
     } else {
       this.loginForm.markAllAsTouched();
