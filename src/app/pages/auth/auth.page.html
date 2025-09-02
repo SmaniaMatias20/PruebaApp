@@ -1,9 +1,8 @@
-<ion-content [fullscreen]="true">
-  <div class="flex h-screen items-center justify-center shadow-lg">
-    <app-login (payload)="onLogin($event)"></app-login>
-  </div>
+<ion-content>
 
-  <div class="flex h-screen items-center justify-center shadow-lg">
-    <app-register (payload)="onRegister($event)"></app-register>
-  </div>
+  <app-login (payload)="onLogin($event)"></app-login>
+
+
+  <app-register (payload)="onRegister($event)"></app-register>
+
 </ion-content>
