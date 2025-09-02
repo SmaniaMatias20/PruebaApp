@@ -5,7 +5,7 @@
 
     <!-- Email o Usuario -->
     <ion-item lines="none" class="rounded-xl border border-gray-600 bg-gray-700">
-      <ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
+      <ion-input formControlName="email" type="text" placeholder="Email" class="p-3 text-white"></ion-input>
     </ion-item>
     @if (loginForm.get('email')?.touched && loginForm.get('email')?.invalid) {
     <div class="text-red-500 text-sm">Campo obligatorio</div>
@@ -13,14 +13,14 @@
 
     <!-- Password -->
     <ion-item lines="none" class="rounded-xl border border-gray-600 bg-gray-700">
-      <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+      <ion-input formControlName="password" type="password" placeholder="Contraseña" class="p-3 text-white"></ion-input>
     </ion-item>
     @if (loginForm.get('password')?.touched && loginForm.get('password')?.invalid) {
     <div class="text-red-500 text-sm">Mínimo 8 caracteres</div>
     }
 
     <!-- Botón -->
-    <ion-button expand="block" type="submit" [disabled]="loginForm.invalid">
+    <ion-button expand="block" type="submit" [disabled]="loginForm.invalid" class="rounded-xl">
       Iniciar sesión
     </ion-button>
 
