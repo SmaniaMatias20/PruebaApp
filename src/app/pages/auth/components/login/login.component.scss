@@ -1,0 +1,27 @@
+/* Estilos para ion-item */
+.custom-item {
+    --background: #1f2937;
+    /* equivalente a bg-gray-800 */
+    --border-radius: 0.75rem;
+    /* rounded-xl */
+    --border-color: #4b5563;
+    /* border-gray-600 */
+    --border-width: 1px;
+    color: white;
+}
+
+/* Estilos para ion-input */
+ion-input::part(input) {
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Estilos para ion-button */
+.custom-btn {
+    --background: #0a2a7a;
+    /* azul */
+    --border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
